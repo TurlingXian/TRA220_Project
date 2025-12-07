@@ -3,7 +3,8 @@ import numpy as np
 import time
 import config
 
-def solve_pytorch(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER):
+# 修改点：增加 tol 参数，默认值为 config.TOLERANCE
+def solve_pytorch(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER, tol=config.TOLERANCE):
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA not available")
         
@@ -27,6 +28,9 @@ def solve_pytorch(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER):
     start_time = time.time()
     final_it = 0
     
+    # 预热 GPU (可选，但推荐在 benchmark 脚本里做)
+    # torch.cuda.synchronize() 
+
     for it in range(max_iter):
         p_old = p.clone()
         
@@ -40,13 +44,14 @@ def solve_pytorch(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER):
         if not config.BENCHMARK_MODE and it % config.CHECK_INTERVAL == 0:
             # 关键优化：只传标量 .item()
             diff = torch.max(torch.abs(p - p_old)).item()
-            if diff < config.TOLERANCE:
+            
+            # 修改点：使用传入的动态 tol 进行判断
+            if diff < tol:
                 final_it = it
-                print(f"   ✅ PyTorch Converged at {it}, err={diff:.2e}")
+                # print(f"   ✅ PyTorch Converged at {it}, err={diff:.2e}")
                 break
     else:
         final_it = max_iter
 
-    # 同步并返回 CPU 数据
     torch.cuda.synchronize()
     return np.linspace(xmin, xmax, nx), np.linspace(ymin, ymax, ny), p.cpu().numpy(), final_it, time.time() - start_time
