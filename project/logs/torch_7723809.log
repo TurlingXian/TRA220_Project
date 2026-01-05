@@ -1,0 +1,25 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7723809
+Job ID: 7723809
+Running on node: 
+------------------------------------------------
+GPU Allocated:
+name, memory.total [MiB]
+NVIDIA A100-SXM4-40GB, 40960 MiB
+------------------------------------------------
+Activating virtual environment...
+Starting PyTorch Benchmark...
+=======================================================================
+   PyTorch Benchmark (Dynamic Tolerance Mode)
+   Base Tol: 1e-07 (at 50x50) | Logic: Tol_new = Tol_base / (Size/50)^2
+=======================================================================
+   Grid    |  Tol Used  |   Steps    |  Time (s)  |    Status   
+--------------------------------------------------------------------
+50x50    | 1.0e-07  |    2100    |   0.4078   |  Converged  
+100x100   | 2.5e-08  |    6700    |   1.2971   |  Converged  
+200x200   | 6.2e-09  |   19500    |   3.7749   |  Converged  
+400x400   | 1.6e-09  |   49600    |   9.6038   |  Converged  
+800x800   | 3.9e-10  |   95400    |  18.3841   |  Converged  
+1000x1000  | 2.5e-10  |   108500   |  21.0631   |  Converged  
+2000x2000  | 6.2e-11  |   134800   |  33.8498   |  Converged  
+--------------------------------------------------------------------
+Done.

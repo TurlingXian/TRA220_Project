@@ -13,7 +13,8 @@ def run_benchmark():
     BASE_TOL = 1e-7
     BASE_SIZE = 50
 
-    sizes = [50, 100, 200, 400, 800, 1000, 2000]
+    # sizes = [50, 100, 200, 400, 800, 1000, 2000]
+    sizes = [50, 100, 200, 400, 800, 1000]
 
     print(f"=======================================================================")
     print(f"   CPU Benchmark (Dynamic Tolerance Mode)")

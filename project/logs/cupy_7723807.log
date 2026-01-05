@@ -1,0 +1,54 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7723807
+Job ID: 7723807
+Running on node: 
+------------------------------------------------
+Checking GPU status...
+Sun Dec  7 15:13:07 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-SXM4-40GB          On  |   00000000:B1:00.0 Off |                    0 |
+| N/A   26C    P0             47W /  400W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+------------------------------------------------
+Activating virtual environment...
+/cephyr/users/tunl/Vera/venvs/poisson_venv/bin/python
+CuPy imported successfully! Device: <CUDA Device 0>
+------------------------------------------------
+Starting CuPy Benchmark...
+=======================================================================
+   CuPy Benchmark (Dynamic Tolerance Mode)
+   Base Tol: 1e-07 (at 50x50) | Logic: Tol_new = Tol_base / (Size/50)^2
+=======================================================================
+   Grid    |  Tol Used  |   Steps    |  Time (s)  |    Status   
+--------------------------------------------------------------------
+CuPy: Starting simulation on GPU...
+CuPy: Starting simulation on GPU...
+50x50    | 1.0e-07  |    2100    |   0.8551   |  Converged  
+CuPy: Starting simulation on GPU...
+100x100   | 2.5e-08  |    6700    |   2.7094   |  Converged  
+CuPy: Starting simulation on GPU...
+200x200   | 6.2e-09  |   19400    |   7.8414   |  Converged  
+CuPy: Starting simulation on GPU...
+400x400   | 1.6e-09  |   49600    |  20.1538   |  Converged  
+CuPy: Starting simulation on GPU...
+800x800   | 3.9e-10  |   95500    |  38.8958   |  Converged  
+CuPy: Starting simulation on GPU...
+1000x1000  | 2.5e-10  |   108700   |  44.3330   |  Converged  
+CuPy: Starting simulation on GPU...
+2000x2000  | 6.2e-11  |   134300   |  55.2210   |  Converged  
+--------------------------------------------------------------------
+Done.

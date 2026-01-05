@@ -1,0 +1,16 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7724491
+Job ID: 7724491, Array Task ID: 1
+Running on node: 
+Activating virtual environment...
+/cephyr/users/tunl/Vera/venvs/poisson_venv/bin/python
+Configuring for 64 Cores...
+=======================================================================
+   CPU PARALLEL Benchmark (Numba Multicore)
+   Threads Active: 64
+   Base Tol: 1e-07 (at 50x50) | Logic: Tol_new = Tol_base / (Size/50)^2
+=======================================================================
+   Grid    |  Tol Used  |   Steps    |  Time (s)  |    Status   
+--------------------------------------------------------------------
+2000x2000  | 6.2e-11  |   126600   |  497.0750  |  Converged  
+--------------------------------------------------------------------
+Done with 64 cores test.

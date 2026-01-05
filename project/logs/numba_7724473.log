@@ -1,0 +1,18 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7724473
+Job ID: 7724473
+Starting Numba Benchmark...
+=======================================================================
+   Numba (Basic) Benchmark (Dynamic Tolerance Mode)
+   Base Tol: 1e-07 (at 50x50) | Logic: Tol_new = Tol_base / (Size/50)^2
+=======================================================================
+   Grid    |  Tol Used  |   Steps    |  Time (s)  |    Status   
+--------------------------------------------------------------------
+50x50    | 1.0e-07  |    2100    |   0.1421   |  Converged  
+100x100   | 2.5e-08  |    6700    |   0.4531   |  Converged  
+200x200   | 6.2e-09  |   19400    |   1.3416   |  Converged  
+400x400   | 1.6e-09  |   49500    |   3.5278   |  Converged  
+800x800   | 3.9e-10  |   94400    |   7.8652   |  Converged  
+1000x1000  | 2.5e-10  |   105600   |   9.5413   |  Converged  
+2000x2000  | 6.2e-11  |   130200   |  30.1077   |  Converged  
+--------------------------------------------------------------------
+Done.

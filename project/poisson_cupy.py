@@ -41,7 +41,7 @@ def solve_cupy(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER, tol=config.
 
     # 4. 主循环
     for it in range(max_iter):
-        pd = p.copy() # 在 GPU 上进行显存拷贝 (非常快)
+        pd[:] = p[:]# 在 GPU 上进行显存拷贝 (非常快)
         
         # 核心计算：语法和 NumPy 一模一样！
         p[1:-1, 1:-1] = (((pd[1:-1, 2:] + pd[1:-1, :-2]) * dy2 +

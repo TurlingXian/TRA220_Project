@@ -1,0 +1,22 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7723801
+Job ID: 7723801, Array Task ID: 0
+Running on node: 
+Activating virtual environment...
+/cephyr/users/tunl/Vera/venvs/poisson_venv/bin/python
+Configuring for 32 Cores...
+=======================================================================
+   CPU PARALLEL Benchmark (Numba Multicore)
+   Threads Active: 32
+   Base Tol: 1e-07 (at 50x50) | Logic: Tol_new = Tol_base / (Size/50)^2
+=======================================================================
+   Grid    |  Tol Used  |   Steps    |  Time (s)  |    Status   
+--------------------------------------------------------------------
+50x50    | 1.0e-07  |    2100    |   0.0817   |  Converged  
+100x100   | 2.5e-08  |    6700    |   0.5796   |  Converged  
+200x200   | 6.2e-09  |   19400    |   5.0675   |  Converged  
+400x400   | 1.6e-09  |   49400    |  44.8694   |  Converged  
+800x800   | 3.9e-10  |   93300    |  319.3456  |  Converged  
+1000x1000  | 2.5e-10  |   105200   |  551.6074  |  Converged  
+2000x2000  | 6.2e-11  |   126600   |  467.6125  |  Converged  
+--------------------------------------------------------------------
+Done with 32 cores test.

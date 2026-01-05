@@ -1,0 +1,17 @@
+This job can be monitored from: https://job.c3se.chalmers.se/vera/7724481
+Job ID: 7724481
+Starting Numba Shared Memory Benchmark...
+=======================================================================
+   Numba (Shared Memory) Benchmark
+   Tile Size: 16x16 | Shared Mem: 1.27 KB/block
+=======================================================================
+Grid       | Tol Used   | Steps      | Time (s)   | Status      
+--------------------------------------------------------------------
+50x50      | 1.0e-07  | 3000       | 0.1621     | Converged   
+100x100    | 2.5e-08  | 7000       | 0.3758     | Converged   
+200x200    | 6.2e-09  | 20000      | 1.0823     | Converged   
+400x400    | 1.6e-09  | 50000      | 2.6970     | Converged   
+800x800    | 3.9e-10  | 95000      | 5.2058     | Converged   
+1000x1000  | 2.5e-10  | 106000     | 5.9433     | Converged   
+2000x2000  | 6.2e-11  | 132000     | 11.9957    | Converged   
+Done.

@@ -30,7 +30,7 @@ def solve_cpu(nx=config.NX, ny=config.NY, max_iter=config.MAX_ITER, tol=config.T
     # print(f"CPU Baseline: Running {max_iter} steps (tol={tol:.1e})...")
 
     for it in range(max_iter):
-        pd = p.copy()
+        pd[:] = p[:]
         p[1:-1, 1:-1] = (((pd[1:-1, 2:] + pd[1:-1, :-2]) * dy2 +
                           (pd[2:, 1:-1] + pd[:-2, 1:-1]) * dx2 -
                           b[1:-1, 1:-1] * dx2 * dy2) * div_term)
