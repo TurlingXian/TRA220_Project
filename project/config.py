@@ -1,31 +1,29 @@
 # config.py
 
 # --- 模式选择 ---
-# True:  纯性能测试模式 (推荐)。强制跑满 MAX_ITER，不检查收敛。
-#        这是展示 GPU 吞吐量 (Speedup) 的最佳方式。
-# False: 物理模拟模式。当误差小于 TOLERANCE 时提前停止。
-BENCHMARK_MODE = True
+# 建议设为 True。
+# 论文 4.1-4.3 节主要对比“计算吞吐量”，即在相同步数下谁跑得快。
+BENCHMARK_MODE = True 
 
 # --- 网格设置 ---
-# 推荐: 1000 或 2000 以展示 GPU 优势
-NX = 50
-NY = 50
+# 这里的 NX, NY 是默认值。
+# 在执行脚本（如 benchmark_cpu.py）时，代码会循环遍历不同规模，覆盖掉这里的 50。
+NX = 512 
+NY = 512
 
 # --- 迭代设置 ---
-# 如果是 Benchmark 模式，建议设为 2000~5000 步
-# 如果是 Physics 模式，可能需要更多步数
-MAX_ITER = 2000
+# 性能测试模式下，建议统一设为 1000。
+# 1000 步足以消除计时的随机误差，同时保证 CPU 不会跑太久。
+MAX_ITER = 1000 
 
 # --- 物理参数 ---
 X_MIN, X_MAX = 0.0, 2.0
 Y_MIN, Y_MAX = 0.0, 1.0
 
 # --- 收敛判定 ---
-# 仅在 BENCHMARK_MODE = False 时生效
-# 建议设得很小，或者采用 relative tolerance，这里用绝对误差演示
+# 虽然 BENCHMARK_MODE=True 时不生效，但建议留着用于最后的物理验证。
 TOLERANCE = 1e-6 
-CHECK_INTERVAL = 100 # 每隔多少步检查一次误差 (减少同步开销)
+CHECK_INTERVAL = 100 
 
 # --- 绘图开关 ---
-# 网格大于 500x500 时建议 False，否则 Matplotlib 会卡死
 ENABLE_PLOTTING = False

@@ -26,6 +26,6 @@ unset NUMBA_CUDA_DIR
 
 # 4. 运行 Shared Memory Benchmark
 echo "Starting Numba Shared Memory Benchmark..."
-python -u benchmark_numba_shared.py
+python -u benchmark_numba_final.py
 
 echo "Done."
